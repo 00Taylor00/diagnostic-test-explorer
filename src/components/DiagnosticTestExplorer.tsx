@@ -204,7 +204,7 @@ const DETAILS = {
     ],
   }, // Ahmed HU et al., Lancet 2017 (PROMIS). :contentReference[oaicite:6]{index=6}
 
-  [keyFor("D-dimer (POC)", "VTE")]: {
+  [keyFor("D-dimer (POC)", "DVT")]: {
     overview:
       "Qualitative POC D-dimer (SimpliRED) pooled Se 0.85 and Sp 0.74 in outpatients with suspected venous thromboembolism; suitable for rule-out in low pretest probability when used with a clinical decision rule.",
     sampleSize: "23 studies; n=13,959 (mixed suspected VTE).",
@@ -216,7 +216,7 @@ const DETAILS = {
       "Apply alongside a validated clinical prediction rule (e.g., Wells); best for low pretest probability.",
       "Qualitative assays show better specificity than some quantitative platforms but higher LR− with SimpliRED than Cardiac.",
     ],
-  }, 
+  },
 
   [keyFor("CTPA", "Pulmonary Embolism")]: {
     overview:
