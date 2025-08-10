@@ -44,7 +44,7 @@ const RAW = [
   { "Test":"HPV DNA", "Condition":"Cervical Cancer", "Sensitivity":0.95, "Specificity":0.94, "LR+":15.83, "LR-":0.05, "Reference":"Naucler P, et al. (2007), N Engl J Med", "ReferenceUrl":"https://pubmed.ncbi.nlm.nih.gov/17942871/" },
   { "Test":"PSA", "Condition":"Prostate Cancer", "Sensitivity":0.92, "Specificity":0.16, "LR+":1.10, "LR-":0.50, "Reference":"Yan J, et al. (2022), Investigative and Clinical Urology", "ReferenceUrl":"https://icurology.org/DOIx.php?id=10.4111/icu.20210429" },
   { "Test":"MRI (mpMRI)", "Condition":"Prostate Cancer", "Sensitivity":0.93, "Specificity":0.41, "LR+":1.58, "LR-":0.17, "Reference":"Ahmed HU, et al. (2017), Lancet", "ReferenceUrl":"https://pubmed.ncbi.nlm.nih.gov/27599140/" },
-  { "Test":"D-dimer", "Condition":"Pulmonary Embolism", "Sensitivity":0.97, "Specificity":0.41, "LR+":1.64, "LR-":0.07, "Reference":"Di Nisio M, et al. (2007), Arch Intern Med // Clive K (2016), American Society of Hematology", "ReferenceUrl":"https://pubmed.ncbi.nlm.nih.gov/17155963/, https://pmc.ncbi.nlm.nih.gov/articles/PMC6142443/" },
+  { "Test":"D-dimer (POC)", "Condition":"DVT", "Sensitivity":0.85, "Specificity":0.74, "LR+":3.27, "LR-":0.20, "Reference":"Geersing GJ, et al. (2009), BMJ 339:b2990", "ReferenceUrl":"https://www.bmj.com/content/339/bmj.b2990" },
   { "Test":"CTPA", "Condition":"Pulmonary Embolism", "Sensitivity":0.98, "Specificity":0.94, "LR+":16.33, "LR-":0.02, "Reference":"Paul D Stein, et al. (2023), NEJM", "ReferenceUrl":"https://pubmed.ncbi.nlm.nih.gov/16738268/" },
   { "Test":"Rapid Antigen", "Condition":"COVID-19", "Sensitivity":0.73, "Specificity":0.99, "LR+":73.00, "LR-":0.27, "Reference":"Dinnes J, et al. (2021), Cochrane", "ReferenceUrl":"https://pubmed.ncbi.nlm.nih.gov/33760236/" },
   { "Test":"PCR", "Condition":"COVID-19", "Sensitivity":0.80, "Specificity":0.98, "LR+":40.00, "LR-":0.20, "Reference":"Sophia Yohe (2020), College of American Pathologists", "ReferenceUrl":"https://pubmed.ncbi.nlm.nih.https://www.cap.org/member-resources/articles/how-good-are-covid-19-sars-cov-2-diagnostic-pcr-tests/33301459/" },
@@ -204,19 +204,19 @@ const DETAILS = {
     ],
   }, // Ahmed HU et al., Lancet 2017 (PROMIS). :contentReference[oaicite:6]{index=6}
 
-  [keyFor("D-dimer", "Pulmonary Embolism")]: {
+  [keyFor("D-dimer (POC)", "VTE")]: {
     overview:
-      "Highly sensitive rule-out test in low/intermediate pretest probability; specificity limited and improved with age-adjusted or probability-adjusted thresholds.",
-    sampleSize: "Meta-analyses pooled dozens of cohorts; assay-type subgroup data reported.",
-    population: "Adults with suspected VTE in ED/ambulatory settings.",
-    setting: "Emergency/acute care; mixed inpatient/outpatient.",
-    design: "Systematic reviews/meta-analyses of diagnostic accuracy; management studies.",
-    year: "Key meta-analysis: 2007; further evidence through 2020.",
+      "Qualitative POC D-dimer (SimpliRED) pooled Se 0.85 and Sp 0.74 in outpatients with suspected venous thromboembolism; suitable for rule-out in low pretest probability when used with a clinical decision rule.",
+    sampleSize: "23 studies; n=13,959 (mixed suspected VTE).",
+    population: "Consecutive outpatients with suspected VTE (includes DVT and PE).",
+    setting: "Emergency/ambulatory care; near-patient testing.",
+    design: "Diagnostic meta-analysis (bivariate model).",
+    year: "Publication year: 2009",
     caveats: [
-      "Pregnancy, cancer, inflammation, recent surgery elevate D-dimer.",
-      "Use only when pretest probability is not high.",
+      "Apply alongside a validated clinical prediction rule (e.g., Wells); best for low pretest probability.",
+      "Qualitative assays show better specificity than some quantitative platforms but higher LR− with SimpliRED than Cardiac.",
     ],
-  }, // Di Nisio et al., 2007 J Thromb Haemost; Patel et al., Blood Adv 2020 review/meta-analysis. :contentReference[oaicite:7]{index=7}
+  }, 
 
   [keyFor("CTPA", "Pulmonary Embolism")]: {
     overview:
