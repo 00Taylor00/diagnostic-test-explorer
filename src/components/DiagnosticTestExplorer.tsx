@@ -607,8 +607,8 @@ function useSortableData(items: TestData[], config: SortConfig | null = null) {
     if (sortConfig !== null) {
       sortable.sort((a, b) => {
         const { key, direction } = sortConfig;
-        const va = a[key] as any;
-        const vb = b[key] as any;
+        const va = a[key];
+        const vb = b[key];
         const aVal = va ?? (typeof vb === 'number' ? 0 : '');
         const bVal = vb ?? (typeof va === 'number' ? 0 : '');
         if (aVal < bVal) return direction === "asc" ? -1 : 1;
